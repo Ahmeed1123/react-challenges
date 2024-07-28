@@ -1,7 +1,7 @@
-export default function navbar() {
+export default function navbar({prandName}) {
     return (
         <navbar>
-             <h3 className={"my-0 fs-1"}>Trmeez Academy</h3>
+             <h3 className={"my-0 fs-1"}>{prandName}</h3>
         </navbar>
     );
 }

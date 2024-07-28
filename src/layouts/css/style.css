@@ -1,3 +1,9 @@
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
 navbar {
     background-color: #036c6c;
     display: flex;
@@ -36,7 +42,7 @@ navbar {
     }
 }
 .btn {
-    max-width: 50px;
+    max-width: 70px;
     margin: 0 auto 15px;
     padding: 5px;
     border-radius: 6px;

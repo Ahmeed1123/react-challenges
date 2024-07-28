@@ -8,7 +8,7 @@ import Posts from './layouts/Posts';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar prandName="Tarmeez Academy" />
       <div className="containar">
           <Posts/>
           <Sidebar/>
