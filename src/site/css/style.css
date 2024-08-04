@@ -1,0 +1,52 @@
+
+
+form {
+    margin-top: 60px;
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+}
+form label {
+    display: block;
+    margin-bottom: 3px;
+}
+form button {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    padding: 6px 17px;
+    border-radius: 10px;
+}
+form button[disabled] {
+    background-color: #0000ff75;
+    cursor: auto;
+}
+.modales {
+    position: fixed;
+    z-index: 300;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
+.model-content {
+    width: 90%;
+    background-color: white;
+}
+.model-content .sucsses {
+    color: green;
+}
+
+.model-content .Error {
+    color: red;
+}
