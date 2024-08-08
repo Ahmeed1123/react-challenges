@@ -1,16 +1,10 @@
-export default function MyComponent({value, hndelChage , title}) {
+import MyInput from "./MyInput";
+export default function MyComponent() {
     return (
         <>     
-            <label>{title}</label>
-            <input 
-                type="text" 
-                value={value} 
-                onChange={(event) => {
-                    hndelChage(event.target.value);
-                }} 
-            />
-
-
+            <h1>My header component</h1>
+            <MyInput/>
+            <h1>My footer component</h1>
         </>
     );
 }
