@@ -1,24 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import ToDoList from "./compoents/pages/ToDoList";
+import { createTheme,ThemeProvider } from "@mui/material/styles";
+import { Typography } from "@mui/material";
+import { v4 as uuidv4 } from "uuid";
+import { TodosContext } from "./contexts/TodosContext";
+import { useState } from "react";
+const theme = createTheme({
+  typography : {
+    fontFamily: [ 'Alexandria'],
+  },
+  palette: {
+    primary: {
+      main: "#ef6c00",
+    },
+    secondary: {
+      main: "#ffeb3b",
+    },
+  }
+});
+const InitialTodos = [
+  {
+    id: uuidv4(),
+    title: "قراءة كتاب",
+    description: "يسش يسش يسش يسش يسش",
+    isCompleted: false,
+  },
+  {
+    id: uuidv4(),
+    title: "قراءة كتاب",
+    description: "يسش يسش يسش يسش يسش",
+    isCompleted: false,
+  },
+  {
+    id: uuidv4(),
+    title: "قراءة كتاب",
+    description: "يسش يسش يسش يسش يسش",
+    isCompleted: false,
+  },
+  {
+    id: uuidv4(),
+    title: "قراءة كتاب",
+    description: "يسش يسش يسش يسش يسش",
+    isCompleted: false,
+  },
+];
 function App() {
+  const [todos, setTodos] = useState(InitialTodos);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+        <div
+          className="App"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "100vh",
+            direction: "rtl",
+            background: "#191b1f",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+            <TodosContext.Provider value={{ todos, setTodos }}>
+              <ToDoList />
+            </TodosContext.Provider>
+        </div>
+    </ThemeProvider>
   );
 }
 
