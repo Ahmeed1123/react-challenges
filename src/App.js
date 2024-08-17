@@ -9,6 +9,9 @@ import { Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { TodosContext } from "./contexts/TodosContext";
 import { useState } from "react";
+import MySnackBar from "./compoents/elements/snackBar/MySnackBar";
+import { ToastProvider } from "./contexts/ToastContext";
+import TodosProvider from "./contexts/TodosContext";
 const theme = createTheme({
   typography : {
     fontFamily: [ 'Alexandria'],
@@ -51,24 +54,27 @@ const InitialTodos = [
 function App() {
   const [todos, setTodos] = useState(InitialTodos);
 
+
   return (
     <ThemeProvider theme={theme}>
-        <div
-          className="App"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "100vh",
-            direction: "rtl",
-            background: "#191b1f",
-          }}
-        >
-            <TodosContext.Provider value={{ todos, setTodos }}>
-              <ToDoList />
-            </TodosContext.Provider>
-        </div>
+      <TodosProvider>
+        <ToastProvider>
+          <div
+            className="App"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "100vh",
+              direction: "rtl",
+              background: "#191b1f",
+            }}
+          >
+            <ToDoList />
+          </div>
+        </ToastProvider>
+      </TodosProvider>
     </ThemeProvider>
   );
 }
